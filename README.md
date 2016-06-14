@@ -2,8 +2,12 @@
 	1 变量作用域
 		(1) this指向
 		(2) setTimeout中this指向
+			for(var i=0;i<3;i++){
+				setTimeout(function(){console.log(i)},1000)
+			}
 		(3) 如何改变this指向
 	2 继承
+		call apply
 	3 安全
 		(1) xss
 		(2) crsf
