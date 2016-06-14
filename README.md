@@ -54,8 +54,8 @@
 	6 构造函数
 		var a={x:2}
 		function aa(a){
-		  a.x=1
-		  a={}
+		  a.x=1 //改变引用对象的属性
+		  a={} //改变引用的对象
 		  console.log(a)
 		}
 		aa(a)
