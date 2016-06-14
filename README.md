@@ -26,6 +26,23 @@
 				a.apply(this,aa)
 			}
 			new b(1,[2])
+		(2)prototype
+			function Shape() {}
+			function Rect() {}
+			// 方法1
+			Rect.prototype = new Shape();
+			Rect.prototype.constructor = Shape;
+			
+			// 方法2
+			Rect.prototype = Shape.prototype;
+			Rect.prototype.constructor = Shape;
+			
+			// 方法3
+			Rect.prototype = Object.create(Shape.prototype);
+			Rect.prototype.area = function () {
+			  // do something
+			};
+
 	3 安全
 		(1) xss
 		(2) crsf
@@ -45,3 +62,5 @@
 		//Object {}
 		console.log(a)
 		//Object {x: 1}
+	7 cookis session localStotage
+		同源文档可以读取并修改localStorage数据，sessionStorage只允许同一个窗口下的文档访问，如通过iframe引入的同源文档。
