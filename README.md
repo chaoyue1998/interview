@@ -1,13 +1,31 @@
 # 前端面试题
 	1 变量作用域
 		(1) this指向
+			var n=2
+			var obj={
+				n:1,
+				func:function(){
+				console.log(this.n)
+				}
+			}
+			obj.func()
+			var fc=obj.func
+			fc()
 		(2) setTimeout中this指向
 			for(var i=0;i<3;i++){
-				setTimeout(function(){console.log(i)},1000)
+				setTimeout(function(){console.log(i)},20)
 			}
 		(3) 如何改变this指向
 	2 继承
-		call apply
+		(1) call apply
+			function a(aa){
+				this.aa=aa
+			}
+			function b(bb,aa){
+				this.bb=bb;
+				a.apply(this,aa)
+			}
+			new b(1,[2])
 	3 安全
 		(1) xss
 		(2) crsf
