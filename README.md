@@ -64,3 +64,12 @@
 		//Object {x: 1}
 	7 cookis session localStotage
 		同源文档可以读取并修改localStorage数据，sessionStorage只允许同一个窗口下的文档访问，如通过iframe引入的同源文档。
+	8 mvc mvp mvvc
+		(1) mvc
+			View 传送指令到 Controller
+			Controller 完成业务逻辑后，要求 Model 改变状态
+			Model 将新的数据发送到 View，用户得到反馈
+		(2) mvp
+			各部分之间的通信，都是双向的，View 与 Model 不发生联系，都通过 Presenter 传递
+		(3) mvvc
+			采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。
